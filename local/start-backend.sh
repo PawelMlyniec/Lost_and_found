@@ -1,1 +1,1 @@
-docker-compose -f confluent-platform.yml -f database.yml up
+docker-compose -f confluent-platform.yml -f database.yml -f microservices.yml up

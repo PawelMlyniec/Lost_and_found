@@ -1,19 +1,21 @@
 # Local setup
-1. Clone the repo including submodules
+Clone the repo including submodules and enter `infrastructure/local` directory
 ```bash
 git clone --recurse-submodules https://gitlab.com/reliable-and-scalable-biskup/infrastructure.git
-```
-2. Enter `infrastructure/local` directory
-```bash
 cd infrastructure/local
 ```
-2. Start the backend via script
+Start the backend
 ```bash
-./start-backend # Linux
+./start-backend.sh # Linux
 start-backend # Windows
 ```
-3. Stop the backend via script
+Stop the backend
 ```bash
-./stop-backend # Linux
+./stop-backend.sh # Linux
 stop-backend # Windows
+```
+Stop the backend and delete all containers
+```bash
+./kill-backend.sh # Linux
+kill-backend # Windows
 ```

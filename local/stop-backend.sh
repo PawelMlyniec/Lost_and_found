@@ -1,1 +1,1 @@
-docker-compose -f confluent-platform.yml -f database.yml -f microservices.yml down
+docker-compose -f confluent-platform.yml -f database.yml -f microservices.yml stop
