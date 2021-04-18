@@ -1,0 +1,9 @@
+[submodule "local/lost-report-service"]
+	path = local/lost-report-service
+	url = https://gitlab.com/reliable-and-scalable-biskup/lost-report-service.git
+[submodule "local/text-message-service"]
+	path = local/text-message-service
+	url = https://gitlab.com/reliable-and-scalable-biskup/text-message-service.git
+[submodule "local/notification-service"]
+	path = local/notification-service
+	url = https://gitlab.com/reliable-and-scalable-biskup/notification-service.git
