@@ -1,5 +1,12 @@
-version: '2'
+version: '3.4'
 
 services:
-  hello-worlds:
-    image: hello-world
+
+  lost-report-service:
+    image: lost-report-service
+    container_name: lost-report-service
+    ports:
+      - "8080:8080"
+    depends_on:
+      - kafka
+      - mongo

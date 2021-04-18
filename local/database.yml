@@ -1,4 +1,4 @@
-version: '2'
+version: '3.4'
 
 services:
 
@@ -11,3 +11,5 @@ services:
     volumes:
       #      - ~/docker/volumes/mongo:/data/data
       - ./init-db.js:/docker-entrypoint-initdb.d/init-db.js
+    logging:
+      driver: none
