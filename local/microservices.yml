@@ -10,3 +10,21 @@ services:
     depends_on:
       - kafka
       - mongo
+
+  notification-service:
+    image: notification-service
+    container_name: notification-service
+    ports:
+      - "9090:9090"
+    depends_on:
+      - kafka
+      - mongo
+
+  text-message-service:
+    image: text-message-service
+    container_name: text-message-service
+    ports:
+      - "7070:7070"
+    depends_on:
+      - kafka
+      - mongo
