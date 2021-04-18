@@ -19,7 +19,7 @@ Stop the backend and delete all containers
 ./kill-backend.sh # Linux
 kill-backend # Windows
 ```
-Pull changes from all repositories to get the latest backend state
+Pull changes from all remote repositories to get the latest backend state
 ```bash
 git pull
 git submodule update --recursive --remote
