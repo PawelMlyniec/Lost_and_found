@@ -2,9 +2,14 @@
 Make sure you have Java 14 installed and correctly configured (Windows)
 * download zip package from https://download.java.net/openjdk/jdk14/ri/openjdk-14+36_windows-x64_bin.zip
 * extract it to some folder, for example `C:/java`
-* set environment variable
-** `Path` to `C:\java\bin`
-** `JAVA_HOME` to `C:\java` 
+* set environment variables according to installation folder
+  * `Path` to `C:\java\bin`
+  * `JAVA_HOME` to `C:\java`
+
+![img.png](doc/open-env.png)  
+![img.png](doc/system-props-dialog.png)
+![img_1.png](doc/edit-env-dialog.png)
+![img_2.png](doc/env-dialog.png)
 
 Clone the repo including submodules. Then enter the `infrastructure/local` directory
 ```bash
