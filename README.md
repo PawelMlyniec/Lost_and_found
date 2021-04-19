@@ -29,9 +29,9 @@ git submodule update --recursive --remote
 
 # Configuring Java on Windows
 
-Before running the scripts, make sure you have Java 14 installed and correctly configured (Windows)
+Before running the scripts, make sure you have Java 14 installed and correctly configured
 * download zip package from https://download.java.net/openjdk/jdk14/ri/openjdk-14+36_windows-x64_bin.zip
-* extract it to some folder, for example `C:/java`
+* extract it to some folder, for example `C:\java`
 * adjust environment variables according to installation folder
     * `JAVA_HOME` - set value to `C:\java`
     * `Path` - append `C:\java\bin` to the existing value
