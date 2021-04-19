@@ -1,6 +1,6 @@
 # Local setup
 
-Clone the repo including submodules. Then enter the `infrastructure/local` directory
+Clone the repo including submodules
 ```bash
 git clone --recurse-submodules https://gitlab.com/reliable-and-scalable-biskup/infrastructure.git
 cd infrastructure/local
