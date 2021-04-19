@@ -32,14 +32,14 @@ git submodule update --recursive --remote
 Before running the scripts, make sure you have Java 14 installed and correctly configured (Windows)
 * download zip package from https://download.java.net/openjdk/jdk14/ri/openjdk-14+36_windows-x64_bin.zip
 * extract it to some folder, for example `C:/java`
-* set environment variables according to installation folder
-    * `Path` to `C:\java\bin`
-    * `JAVA_HOME` to `C:\java`
+* adjust environment variables according to installation folder
+    * `JAVA_HOME` - set value to `C:\java`
+    * `Path` - append `C:\java\bin` to the existing value
 
 ![open-env.png](doc/open-env.png)
 
 ![open-env.png](doc/system-props-dialog.png)
 
-![open-env.png](doc/edit-env-dialog.png)
-
 ![open-env.png](doc/env-dialog.png)
+
+![open-env.png](doc/edit-env-dialog.png)
