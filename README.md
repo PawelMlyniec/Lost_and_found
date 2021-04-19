@@ -43,3 +43,4 @@ Before running the scripts, make sure you have Java 14 installed and correctly c
 ![open-env.png](doc/env-dialog.png)
 
 ![open-env.png](doc/edit-env-dialog.png)
+
