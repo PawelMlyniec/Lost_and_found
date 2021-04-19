@@ -3,8 +3,8 @@
 Clone the repo including submodules. Then enter the `infrastructure/local` directory
 ```bash
 git clone --recurse-submodules https://gitlab.com/reliable-and-scalable-biskup/infrastructure.git
-git submodule update --recursive --remote
 cd infrastructure/local
+git submodule update --recursive --remote
 ```
 Start the backend
 ```bash
