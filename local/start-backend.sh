@@ -1,3 +1,5 @@
+./kill-backend.sh
+
 cp -r lost-report-service/src/main/proto/* notification-service/src/main/proto
 cp -r text-message-service/src/main/proto/* notification-service/src/main/proto
 
