@@ -11,6 +11,11 @@ Start the backend
 ./start-backend.sh # Linux
 start-backend.bat # Windows
 ```
+Start the platform (MongoDB + Apache Kafka, but without our microservices)
+```bash
+./start-platform.sh # Linux
+start-platform.bat # Windows
+```
 Stop the backend
 ```bash
 ./stop-backend.sh # Linux
