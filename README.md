@@ -2,7 +2,7 @@
 
 Clone the repo including submodules
 ```bash
-git clone --recurse-submodules https://gitlab.com/reliable-and-scalable-biskup/infrastructure.git
+git clone --recurse-submodules git@gitlab.com:reliable-and-scalable-biskup/infrastructure.git
 cd infrastructure/local
 git submodule update --recursive --remote
 ```
