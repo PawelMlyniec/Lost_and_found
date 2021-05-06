@@ -1,0 +1,39 @@
+---
+apiVersion: mongodbcommunity.mongodb.com/v1
+kind: MongoDBCommunity
+metadata:
+  name: mongodb
+spec:
+  members: 1
+  type: ReplicaSet
+  version: "4.2.6"
+  security:
+    authentication:
+      modes: ["SCRAM"]
+  users:
+    - name: lrs
+      db: lrs-db
+      passwordSecretRef:
+        name: lrs-password
+      roles:
+        - name: readWrite
+          db: lrs-db
+      scramCredentialsSecretName: lrs
+    - name: tms
+      db: tms-db
+      passwordSecretRef:
+        name: tms-password
+      roles:
+        - name: readWrite
+          db: tms-db
+      scramCredentialsSecretName: tms
+    - name: ns
+      db: ns-db
+      passwordSecretRef:
+        name: ns-password
+      roles:
+        - name: readWrite
+          db: ns-db
+      scramCredentialsSecretName: ns
+  additionalMongodConfig:
+    storage.wiredTiger.engineConfig.journalCompressor: zlib

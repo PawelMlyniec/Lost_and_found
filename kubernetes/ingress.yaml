@@ -1,0 +1,42 @@
+---
+apiVersion: "extensions/v1beta1"
+kind: Ingress
+metadata:
+  name: lnf-ingress
+  namespace: default
+spec:
+  rules:
+    - http:
+        paths:
+          - path: "/lostReports"
+            backend:
+              serviceName: "lost-report-service"
+              servicePort: 8080
+          - path: "/lostReports/*"
+            backend:
+              serviceName: "lost-report-service"
+              servicePort: 8080
+          - path: "/foundReports"
+            backend:
+              serviceName: "lost-report-service"
+              servicePort: 8080
+          - path: "/foundReports/*"
+            backend:
+              serviceName: "lost-report-service"
+              servicePort: 8080
+          - path: "/textMessages"
+            backend:
+              serviceName: "text-message-service"
+              servicePort: 7070
+          - path: "/textMessages/*"
+            backend:
+              serviceName: "text-message-service"
+              servicePort: 7070
+          - path: "/notifications"
+            backend:
+              serviceName: "notification-service"
+              servicePort: 6060
+          - path: "/notifications/*"
+            backend:
+              serviceName: "notification-service"
+              servicePort: 6060

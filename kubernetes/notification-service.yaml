@@ -1,0 +1,78 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: notification-service
+  labels:
+    app: ns
+  annotations:
+    cloud.google.com/backend-config: |
+      {
+        "ports": {
+          "6060": "ns-backend",
+          "6061": "ns-backend"
+        }
+      }
+spec:
+  type: NodePort
+  ports:
+    - name: main
+      nodePort: 30060
+      port: 6060
+      protocol: TCP
+      targetPort: 6060
+    - name: management
+      nodePort: 30061
+      port: 6061
+      protocol: TCP
+      targetPort: 6061
+  selector:
+    app: ns
+---
+apiVersion: cloud.google.com/v1
+kind: BackendConfig
+metadata:
+  name: ns-backend
+spec:
+  healthCheck:
+    checkIntervalSec: 30
+    timeoutSec: 15
+    port: 6061
+    type: HTTP
+    requestPath: /actuator/health
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notification-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ns
+  template:
+    metadata:
+      labels:
+        app: ns
+    spec:
+      containers:
+        - name: ns-ctr
+          image: registry.gitlab.com/reliable-and-scalable-biskup/notification-service:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 6060
+            - containerPort: 6061
+          livenessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 6061
+            initialDelaySeconds: 10
+            periodSeconds: 3
+          readinessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 6061
+            initialDelaySeconds: 10
+            periodSeconds: 3
+      imagePullSecrets:
+        - name: regcred
