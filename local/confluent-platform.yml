@@ -9,8 +9,8 @@ services:
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000
-    logging:
-      driver: none
+#    logging:
+#      driver: none
 
   kafka:
     image: confluentinc/cp-server:6.1.1
@@ -35,8 +35,8 @@ services:
       KAFKA_JMX_PORT: 9101
       KAFKA_JMX_HOSTNAME: localhost
       CONFLUENT_METRICS_ENABLE: 'false'
-    logging:
-      driver: none
+#    logging:
+#      driver: none
 
   schema-registry:
     image: confluentinc/cp-schema-registry:6.1.1
@@ -49,6 +49,5 @@ services:
     environment:
       SCHEMA_REGISTRY_HOST_NAME: schema-registry
       SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: 'kafka:29092'
-      SCHEMA_REGISTRY_LISTENERS: http://0.0.0.0:9099
-    logging:
-      driver: none
+#    logging:
+#      driver: none
