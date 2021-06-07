@@ -1,0 +1,1 @@
+kubectl port-forward --namespace mongo $(kubectl get pod --namespace mongo --selector="app=mongodb-svc" --output jsonpath='{.items[0].metadata.name}') 27017:27017
