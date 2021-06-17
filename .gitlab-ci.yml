@@ -8,7 +8,7 @@ apply-config:
     - master
   script:
     - gcloud auth activate-service-account --key-file=$GKE_ACCESS_JSON
-    - gcloud container clusters get-credentials cw-cluster-2 --zone us-central1-a --project silent-base-277616
+    - gcloud container clusters get-credentials lost-n-found-prod --zone europe-west3-a --project lost-n-found-311815
     - kubectl apply -n kafka -f k8s/kafka/kafka.yaml
     - kubectl apply -n kafka -f k8s/kafka/kafka-topics.yaml
     - kubectl apply -n kafka -f k8s/kafka/schema-registry.yaml
