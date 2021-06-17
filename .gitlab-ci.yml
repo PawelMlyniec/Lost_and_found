@@ -1,0 +1,20 @@
+stages:
+  - apply-config
+
+apply-config:
+  image: google/cloud-sdk:293.0.0
+  stage: apply-config
+  only:
+    - master
+  script:
+    - gcloud auth activate-service-account --key-file=$GKE_ACCESS_JSON
+    - gcloud container clusters get-credentials cw-cluster-2 --zone us-central1-a --project silent-base-277616
+    - kubectl apply -n kafka -f k8s/kafka/kafka.yaml
+    - kubectl apply -n kafka -f k8s/kafka/kafka-topics.yaml
+    - kubectl apply -n kafka -f k8s/kafka/schema-registry.yaml
+    - kubectl apply -n mongo -f k8s/mongo/mongodb.yaml
+    - kubectl apply -f k8s/lost-report-service.yaml
+    - kubectl apply -f k8s/text-message-service.yaml
+    - kubectl apply -f k8s/notification-service.yaml
+    - kubectl apply -f k8s/ingress.yaml
+    - kubectl apply -f k8s/frontend.yaml

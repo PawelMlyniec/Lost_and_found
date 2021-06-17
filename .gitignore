@@ -1,2 +1,2 @@
 .idea
-kubernetes/mongo/mongodb-secrets.yaml
+k8s/mongo/mongodb-secrets.yaml
